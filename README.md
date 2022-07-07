@@ -1,10 +1,8 @@
-credit-score-classification-app
-==============================
+# Credit Score Classification App
+
+[![Status - Under Development](https://img.shields.io/badge/Status-Under_Development-2ea44f)](https://) [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 a stremlit app on credit score classification
-
-Problem Statement
-You are working as a data scientist in a global finance company. Over the years, the company has collected basic bank details and gathered a lot of credit-related information. The management wants to build an intelligent system to segregate the people into credit score brackets to reduce the manual efforts.
 
 | Feature | Description |
 |---|----|
