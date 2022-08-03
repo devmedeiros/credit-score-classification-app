@@ -1,7 +1,10 @@
 import streamlit as st
 import pickle
-from src import transform_resp
 import pandas as pd
+from zipfile import ZipFile
+from src import transform_resp
+
+ZipFile("..\models\model.zip").extractall("..\models")
 
 st.set_page_config(page_title='Credit Score - Bankio', page_icon='💰', layout='wide',
                    initial_sidebar_state='auto', menu_items={
