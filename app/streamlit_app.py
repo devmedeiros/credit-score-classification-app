@@ -2,11 +2,13 @@ import streamlit as st
 import pickle
 import pandas as pd
 from zipfile import ZipFile
-from pathlib import Path
+import os
 from src import transform_resp
 
-zip_path = Path(__file__).parents[1] / '../models/model.zip'
-folder_path = Path(__file__).parents[1] / '../models'
+path = os.path.dirname(__file__)
+print(path)
+zip_path = '../'+path+'models/model.zip'
+folder_path = '../'+path+'models'
 
 ZipFile(zip_path).extractall(folder_path)
 
