@@ -6,9 +6,8 @@ import os
 from src import transform_resp
 
 path = os.path.dirname(__file__)
-print(path)
-zip_path = '../'+path+'models/model.zip'
-folder_path = '../'+path+'models'
+zip_path = os.path.join(path,'../models/model.zip')
+folder_path = os.path.join(path,'../models')
 
 ZipFile(zip_path).extractall(folder_path)
 
