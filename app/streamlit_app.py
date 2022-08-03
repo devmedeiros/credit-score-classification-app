@@ -11,7 +11,10 @@ folder_path = os.path.join(path,'../models')
 
 ZipFile(zip_path).extractall(folder_path)
 
-st.set_page_config(page_title='Credit Score - Bankio', page_icon='💰', layout='wide',
+scaler = pickle.load(open(os.path.join(path,'../models/scaler.obj'), 'rb'))
+model = pickle.load(open(os.path.join(path,'../models/model.obj'), 'rb'))
+
+st.set_page_config(page_title='Credit Score App', page_icon='💰', layout='wide',
                    initial_sidebar_state='auto', menu_items={
                         'Get Help': None,
                         'Report a bug': 'https://github.com/devmedeiros/credit-score-classification-app/issues',
@@ -72,8 +75,7 @@ if button:
     }
     output = transform_resp(resp)
     output = pd.DataFrame(output, index=[0])
-
-    model = pickle.load(open(os.path.join(path,'../models/model.obj'), 'rb'))
+    output.loc[:,:] = scaler.transform(output)
 
     credit_score = model.predict(output)[0]
 
