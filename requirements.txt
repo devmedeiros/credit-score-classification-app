@@ -7,4 +7,3 @@ pickleshare==0.7.5
 scikit-learn==1.1.1
 seaborn==0.11.2
 streamlit==1.11.1
-zlib==1.2.12
