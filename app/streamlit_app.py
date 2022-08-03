@@ -8,7 +8,7 @@ from src import transform_resp
 zip_path = Path(__file__).parents[1] / '../models/model.zip'
 folder_path = Path(__file__).parents[1] / '../models'
 
-ZipFile(zip_path).extractall(zip_path)
+ZipFile(zip_path).extractall(folder_path)
 
 st.set_page_config(page_title='Credit Score - Bankio', page_icon='💰', layout='wide',
                    initial_sidebar_state='auto', menu_items={
