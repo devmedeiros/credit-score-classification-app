@@ -2,9 +2,13 @@ import streamlit as st
 import pickle
 import pandas as pd
 from zipfile import ZipFile
+from pathlib import Path
 from src import transform_resp
 
-ZipFile("..\models\model.zip").extractall("..\models")
+zip_path = Path(__file__).parents[1] / '../models/model.zip'
+folder_path = Path(__file__).parents[1] / '../models'
+
+ZipFile(zip_path).extractall(zip_path)
 
 st.set_page_config(page_title='Credit Score - Bankio', page_icon='💰', layout='wide',
                    initial_sidebar_state='auto', menu_items={
