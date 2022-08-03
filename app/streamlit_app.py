@@ -73,7 +73,7 @@ if button:
     output = transform_resp(resp)
     output = pd.DataFrame(output, index=[0])
 
-    model = pickle.load(open('../models/model.obj', 'rb'))
+    model = pickle.load(open(os.path.join(path,'../models/model.obj'), 'rb'))
 
     credit_score = model.predict(output)[0]
 
