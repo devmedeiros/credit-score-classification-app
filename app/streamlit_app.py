@@ -37,11 +37,12 @@ st.title('Credit Score Analysis')
 st.caption('Made by Jaqueline Medeiros')
 
 st.markdown('''
-            How a company calculate your credit score may seem like a mystery, but today I want to explain how it works.
-            On the left sidebar (click `>` if you don't see it) you can fill a form - _this data is not saved, you can fill it with fake information_ - to see how each information you provied impact on your credit score.
+            This is a mock-up intended for information only, if you wish to learn more about the model behind this please go to the GitHub [repository](https://github.com/devmedeiros/credit-score-classification-app).
 
-            This is a mock-up intented for information only, if you wish to learn more about the model behind this please go to the GitHub [repository](https://github.com/devmedeiros/credit-score-classification-app).
+            On the left, there's a sidebar (click `>` if you don't see it). Where you can fill out a form - _this data is not saved_ - to see how each piece of information you provided impacts your credit score.
 ''')
+
+st.info('This still is a work in progress, so features and information on this page may change between visits.')
 
 with st.sidebar:
     st.header('Credit Score Form')
@@ -56,8 +57,8 @@ with st.sidebar:
     loans = st.multiselect('Which loans do you have?', ['Auto Loan', 'Credit-Builder Loan', 'Personal Loan',
                                                 'Home Equity Loan', 'Mortgage Loan', 'Student Loan',
                                                 'Debt Consolidation Loan', 'Payday Loan'])
-    missed_payment = st.radio('Have you missed any payment in the last 12 months?', ['Yes', 'No'])
-    minimum_payment = st.radio('Have you payed the minimum amount in at lest one of your credit cards?', ['Yes', 'No'])
+    missed_payment = st.radio('Have you missed any payments in the last 12 months?', ['Yes', 'No'])
+    minimum_payment = st.radio('Have you paid the minimum amount on at least one of your credit cards?', ['Yes', 'No'])
 
     button = st.button( 'Run the numbers!')
 
@@ -120,14 +121,14 @@ with col1:
             st.balloons()
             t1 = plt.Polygon([[5, 0.5], [5.5, 0], [4.5, 0]], color='black')
             placeholder.markdown('Your credit score is **GOOD**! Congratulations!')
-            st.markdown('According to our algorithm, a person with your payment behavior is likely to repay a loan.')
+            st.markdown('This credit score indicates that this person is likely to repay a loan, so the risk of giving them credit is low.')
         elif credit_score == 0:
             t1 = plt.Polygon([[3, 0.5], [3.5, 0], [2.5, 0]], color='black')
             placeholder.markdown('Your credit score is **REGULAR**.')
-            st.markdown('According to our algorithm, a person with your payment behavior is likely to repay some loans but still can miss payments.')
+            st.markdown('This credit score indicates that this person is likely to repay a loan, but can occasionally miss some payments. Meaning that the risk of giving them credit is medium.')
         elif credit_score == -1:
             t1 = plt.Polygon([[1, 0.5], [1.5, 0], [0.5, 0]], color='black')
-            placeholder.markdown('Your credit score is **POOR**. You need to work on your finances to improve your credit score.')
-            st.markdown('According to our algorithm, a person with your payment behavior is unlikely to repay a loan.')
+            placeholder.markdown('Your credit score is **POOR**.')
+            st.markdown('This credit score indicates that this person is unlikely to repay a loan, so the risk of lending them credit is high.')
         plt.gca().add_patch(t1)
         figure.pyplot(f)
