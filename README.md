@@ -8,7 +8,7 @@
 
 </div>
 
-![a gif showing how the streamlit credit score app works](https://user-images.githubusercontent.com/33239902/182934370-a15267ad-f789-424b-8a44-5f512f7f3b06.gif)
+![a gif showing how the streamlit credit score app works](https://user-images.githubusercontent.com/33239902/183321842-be97fb04-f00b-4b62-8e6e-2b53d25335a0.gif   )
 
 This streamlit app demonstrate how a company may evaluate a person credit score, you can see the app live [here](https://bit.ly/3boP7Xd).
 
@@ -67,7 +67,6 @@ Run the Streamlit App
 
 ## Roadmap
  - improve machine learning model
- - add 3 default profiles on Streamlit
 
 --------
 
